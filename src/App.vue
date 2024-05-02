@@ -1,11 +1,10 @@
 <template>
-  <IndexBg></IndexBg>
+  <IndexBg icon="/favicon.ico" txtsvg="/favicontxt.svg"></IndexBg>
 
-  
+
 </template>
 <script setup>
 import IndexBg from "./components/IndexBg.vue";
-
 
 
 
