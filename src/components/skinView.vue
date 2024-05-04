@@ -13,6 +13,9 @@ onMounted(()=>{
     height: props?.config?.height??400,
     skin: props?.config?.skin??"/skins/_xjuunn.png"
   })
+  skinViewer.controls.enableRotate = false;
+  skinViewer.controls.enableZoom = false;
+  skinViewer.controls.enablePan = false;
   emit('onGetViewer',skinViewer)
 })
 </script>
