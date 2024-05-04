@@ -22,13 +22,30 @@ let Skinconfig = {
   skin:"/skins/_xjuunn.png"
 }
 onMounted(()=>{
-  var skinViewAnime = anime.timeline({
-    easing:'easeInOutQuad',
-    update:function () {  }
+  // var skinViewAnime = anime.timeline({
+  //   easing:'easeInOutQuad',
+  //   update:function () {  }
+  // })
+  // skinViewAnime.add({
+  //   targets:''
+  // });
+  let indexAnime = anime.timeline({});
+  indexAnime.add({
+    targets: '.serverName',
+    top: '20vh',
+    opacity:1,
+    delay: anime.stagger(20, {from: 'center'})
   })
-  skinViewAnime.add({
-    targets:''
-  });
+  indexAnime.add({
+    targets:'.serverDomain span',
+    right:'0vw',
+    easing:'easeInOutSine',
+    opacity:1,
+    delay: function (e) {
+      return anime.random(-300,300);
+    }
+  },'-=800')
+
 })
 
 function test(skinViewer){
@@ -52,7 +69,8 @@ function test(skinViewer){
   font-weight: 900;
   font-size: 15vw;
   position: relative;
-  top: 20vh;
+  top: -25vh;
+  opacity: 0;
 }
 .serverDomain{
   font-family: Pixel,sans-serif;
@@ -62,6 +80,11 @@ function test(skinViewer){
   margin: 0 auto;
   width: 70vw;
   text-align: right;
+}
+.serverDomain span{
+  position: relative;
+  right: -100vw;
+  opacity: 0;
 }
 
 /* 媒体查询：针对小型设备（手机）设置不同的字体大小 */
