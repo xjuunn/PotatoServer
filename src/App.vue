@@ -70,7 +70,7 @@ function initSkinView(skinView1){
   skinCamera = skinView.camera;
   skinView.animation = new skinView3d.FlyingAnimation();
   skinView.controls.enableRotate = true;
-  skinView.scene.children[2].position.set(0,0,-20);
+  skinView.scene.children[2].position.set(0,0,0);
 
 }
 // SkinView 响应式
@@ -81,9 +81,9 @@ function reSize(){
 function setSkinViewSize(){
   const {innerWidth,innerHeight} = window;
   skinView.renderer.setSize(innerWidth,innerHeight);
-  let offset = -(innerWidth-1400)*0.05;
-  console.log(offset)
-  skinView.scene.children[2].position.y = offset;
+  // skinView.scene.children[2].position.y = -(innerWidth-1400)*0.05;
+  // skinView.scene.children[0].position.x = -20
+  // skinView.scene.children[2].position.x = -20
   skinCamera.aspect = innerWidth / innerHeight;
   skinCamera.updateProjectionMatrix();
   skinCamera.scale.x = skinCamera.scale.y = skinCamera.z = 3000/innerWidth;
@@ -136,10 +136,9 @@ function setSkinViewSize(){
 } */
 .skinView{
   position: absolute;
-  top:0;
-  left: 0;
+  top:-10vh;
+  left: 0vw;
   z-index: 5;
-  transform-origin: left top;
 }
 
 
